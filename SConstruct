@@ -1,6 +1,6 @@
 env = Environment()
 
-env['CFLAGS'] = ['-I/usr/local/include', '-Wall', '-Werror']
+env['CFLAGS'] = ['-I/usr/local/include', '-Wall', '-Werror', '-Wunused-parameter']
 env['LINKFLAGS'] = ['-L/usr/local/lib']
 env['LIBS'] = ['ev']
 

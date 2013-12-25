@@ -35,6 +35,8 @@ static void when_writable(struct ev_loop * loop, struct ev_io * io,
 	ssize_t n;
 	int err;
 
+	Assert(revents & EV_WRITE);
+
 	if (task->verbose)
 		printf(__FMT__
 			"write fd: %d, buf: %p, len: %zu, offset: %zu\n",
@@ -71,6 +73,8 @@ static void when_readable(struct ev_loop * loop, struct ev_io * io,
 	ssize_t n;
 	int err;
 
+	Assert(revents & EV_READ);
+
 	if (task->verbose)
 		printf(__FMT__
 			"read fd: %d, buf: %p, len: %zu, offset: %zu\n",
@@ -99,7 +103,7 @@ static void when_readable(struct ev_loop * loop, struct ev_io * io,
 		ev_io_stop(loop, io);
 }
 
-int main(int argc, char ** argv)
+int main(void)
 {
 	const size_t N = 65536;
 	int fds[2];
