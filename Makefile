@@ -4,7 +4,11 @@ build:
 	scons
 
 check: build
-	bash scripts/runabouts.sh $(shell find out -name "about_*")
+	bash scripts/runabouts.sh	\
+		out/about_empty_loop	\
+		out/about_timer		\
+		out/about_user_context	\
+		out/about_io		\
 
 clean:
 	scons -c

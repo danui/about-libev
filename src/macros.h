@@ -31,6 +31,17 @@
 		}						\
 	} while (0)
 
+#define Test(X)								\
+	do {								\
+		if (X) {						\
+			printf(__FMT__ "ok   %s\n", __OUT__, #X);	\
+		} else {						\
+			printf(__FMT__ "FAIL %s\n", __OUT__, #X);	\
+			exit(EXIT_FAILURE);				\
+		}							\
+	} while (0)
+
+
 #define Demo(X)					\
 	do {					\
 		printf("\n");			\
