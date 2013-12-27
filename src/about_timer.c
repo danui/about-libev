@@ -25,7 +25,10 @@ static void on_timeout(struct ev_loop * loop, ev_timer * w, int revents)
 	count += 1;
 	if (count > 3) {
 		ev_timer_stop(loop, w);
-		ev_break(loop, EVBREAK_ALL);
+
+		/* NOTE: ev_break is not required because loop stops
+		 * when there is nothing left to do. */
+		//ev_break(loop, EVBREAK_ALL);
 	}
 }
 
