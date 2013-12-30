@@ -10,6 +10,7 @@ check: build
 		out/about_timer_override	\
 		out/about_user_context	\
 		out/about_io		\
+		out/about_now		\
 
 clean:
 	scons -c

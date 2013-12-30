@@ -41,6 +41,14 @@
 		}							\
 	} while (0)
 
+#define Is(X)								\
+	do {								\
+		if (X) {						\
+			printf(__FMT__ "yes  %s\n", __OUT__, #X);	\
+		} else {						\
+			printf(__FMT__ "no   %s\n", __OUT__, #X);	\
+		}							\
+	} while (0)
 
 #define Demo(X)					\
 	do {					\
@@ -49,5 +57,13 @@
 		printf("\n");			\
 		X;				\
 	} while (0)
+
+/**
+ * @return (double)seconds from an ev_tstamp.
+ */
+static inline double to_seconds(ev_tstamp tstamp)
+{
+	return (double)tstamp;
+}
 
 #endif
