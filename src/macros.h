@@ -66,4 +66,9 @@ static inline double to_seconds(ev_tstamp tstamp)
 	return (double)tstamp;
 }
 
+static inline ev_tstamp to_tstamp(double seconds)
+{
+	return (ev_tstamp)seconds;
+}
+
 #endif

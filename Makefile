@@ -11,6 +11,7 @@ check: build
 		out/about_user_context	\
 		out/about_io		\
 		out/about_now		\
+		out/about_periodic	\
 
 clean:
 	scons -c
