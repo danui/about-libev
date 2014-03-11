@@ -10,6 +10,8 @@
 int main(void)
 {
 	struct ev_loop * loop = EV_DEFAULT;
-	printf(__FMT__ "ev_run(loop, 0) -> %d\n", __OUT__, ev_run(loop, 0));
+	printf(__FMT__ "ev_run(loop, 0)...\n", __OUT__);
+	ev_run(loop, 0);
+	printf(__FMT__ "DONE\n", __OUT__);
 	exit(EXIT_SUCCESS);
 }

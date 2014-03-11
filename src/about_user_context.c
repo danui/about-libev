@@ -40,7 +40,7 @@ int main(void)
 	task->count = 3;
 	ev_timer_init(&task->timer, countdown_tick, 0, 0.25);
 	ev_timer_start(loop, &task->timer);
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	free(task);
 	exit(EXIT_SUCCESS);
 }

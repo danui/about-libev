@@ -16,7 +16,7 @@ struct task
 };
 
 static const double T = 0.01;
-static const int N = 10;
+#define N  10
 static int order[N];
 static struct task tasks[N];
 static int n = 0;
@@ -92,7 +92,7 @@ int main(void)
 		ev_timer_init(&tasks[i].timer, on_timeout, T*i, 0);
 		ev_timer_start(loop, &tasks[i].timer);
 	}
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	Test(n == N);
 	if (verbose)
 		dump_order();
@@ -111,7 +111,7 @@ int main(void)
 			ev_timer_init(&tasks[i].timer, on_timeout, T*i, 0);
 		ev_timer_start(loop, &tasks[i].timer);
 	}
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	if (verbose)
 		dump_order();
 	Test(n == 2);
@@ -129,7 +129,7 @@ int main(void)
 			ev_timer_init(&tasks[i].timer, on_timeout, T*i, 0);
 		ev_timer_start(loop, &tasks[i].timer);
 	}
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	if (verbose)
 		dump_order();
 	Test(n == 3);

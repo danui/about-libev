@@ -44,6 +44,6 @@ int main(void)
 	}
 	ev_timer_init(&timer, on_timeout, .1, 0.1);
 	ev_timer_start(loop, &timer);
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	exit(EXIT_SUCCESS);
 }

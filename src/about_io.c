@@ -140,7 +140,7 @@ int main(void)
 	B.verbose = 0;
 
 	Test(0 != memcmp(A.buf, B.buf, N));
-	Test(0 == ev_run(loop, 0));
+	ev_run(loop, 0);
 	Test(0 == memcmp(A.buf, B.buf, N));
 
 	exit(EXIT_SUCCESS);
