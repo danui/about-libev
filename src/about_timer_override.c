@@ -21,11 +21,11 @@ static int order[N];
 static struct task tasks[N];
 static int n = 0;
 
-#define dump_order() __dump_order(__OUT__)
+#define dump_order() __dump_order(__LINE__)
 static void __dump_order(int lineno)
 {
 	int i;
-	printf(__FMT__ "dump_order()\n", lineno);
+	printf(__FMT__ "dump_order() called from line %d\n", __OUT__, lineno);
 	printf(__FMT__ "  n is %d\n", __OUT__, n);
 	for (i=0; i < n; i+=1)
 		printf(__FMT__ "  order[%d] is %d\n", __OUT__, i, order[i]);
